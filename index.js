@@ -4,6 +4,8 @@ const  app = express();
 const mongoose = require('mongoose');
 const User = require('./models/user-model')
 const Chat = require('./models/chat-model')
+const path = require('path')
+
 
 app.use(cors())
 app.use(express.json())
