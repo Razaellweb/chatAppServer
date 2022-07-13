@@ -15,7 +15,7 @@ const Users = () => {
 
 
     async function getUsers() {
-      const response = await fetch("http://localhost:1387/api/getUsers", {
+      const response = await fetch("https://connectrz.herokuapp.com/api/getUsers", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"

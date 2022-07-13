@@ -19,7 +19,7 @@ const ChatPage = () => {
 
 
     async function getMessage() {
-        const response = await fetch("http://localhost:1387/api/getMessages", {
+        const response = await fetch("https://connectrz.herokuapp.com/api/getMessages", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -50,7 +50,7 @@ const ChatPage = () => {
 
     async function sendMessage(event){
         event.preventDefault();
-        const response = await fetch("http://localhost:1387/api/sendMessage", {
+        const response = await fetch("https://connectrz.herokuapp.com/api/sendMessage", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
