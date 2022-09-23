@@ -35,6 +35,8 @@ const Users = () => {
     return (
         <div className="container">
            <p className="para">List of all users</p>
+           <li className="para">Double Tap a user's name to enter inbox</li>
+
            {users.map((user) => {
                const getUserClicked = () => {
                    setId1(`${email1}space${user.email}`);

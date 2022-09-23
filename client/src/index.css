@@ -1,6 +1,7 @@
 body {
     background-color: white;
 }
+
 .container {
     width: 100%;
     background-color: black;
@@ -15,6 +16,7 @@ body {
     overflow-x: hidden;
     max-width: 370px;
 }
+
 .container2 {
     width: 100%;
     background-color: black;
@@ -26,6 +28,47 @@ body {
     overflow-x: hidden;
     max-width: 400px;
 }
+
+.loaderx {
+    width: 20px;
+    height: 20px;
+    border-radius: 180%;
+    border: 3px solid transparent;
+    border-left-color: black;
+    border-top-color: black;
+    animation: an1x 1s linear infinite;
+}
+
+.loadex {
+    width: 10px;
+    height: 10px;
+    border-radius: 180%;
+    border: 3px solid transparent;
+    border-left-color: black;
+    border-top-color: black;
+    animation: anx 1s linear infinite;
+}
+
+@keyframes an1x {
+    0% {
+        transform: rotateY(0turn);
+    }
+
+    100% {
+        transform: rotateY(1turn);
+    }
+}
+
+@keyframes anx {
+    0% {
+        transform: rotateY(0turn);
+    }
+
+    100% {
+        transform: rotateX(1turn);
+    }
+}
+
 .input {
     width: 80%;
     border-radius: 8px;
@@ -35,6 +78,7 @@ body {
     margin: 0 auto;
     font-weight: bolder;
 }
+
 .btn {
     width: 250px;
     height: 40px;
@@ -44,40 +88,49 @@ body {
     border-radius: 7px;
     text-align: center;
 }
+
 .btn:hover {
     background-color: rgba(128, 128, 128, 0.477);
 }
+
 .header {
     color: rgba(128, 128, 128, 0.33);
 }
-.stickyhead{
+
+.stickyhead {
     margin-top: 0;
     background-color: rgba(0, 0, 255, 0.249);
     position: sticky;
     top: 0;
     text-align: center;
 }
+
 .span {
     color: green;
     font-family: sans-serif;
     font-weight: bolder;
 }
+
 .messageBox {
     background-color: rgba(128, 128, 128, 0.33);
     width: 70%;
     margin-bottom: 15px;
     border-radius: 25px;
 }
+
 .sender {
     font-size: small;
     color: green;
 }
+
 .message {
     font-size: medium;
 }
+
 .head {
     font-size: medium;
 }
+
 .btnDelete {
     background-color: rgba(255, 0, 0, 0.522);
     margin-top: 15px;
@@ -94,18 +147,21 @@ body {
     font-family: sans-serif;
     font-size: small;
 }
+
 .signIn {
     font-family: sans-serif;
     font-size: medium;
     color: white;
     margin-top: 50px;
 }
+
 .img1 {
     background: url(./images/astroicecream.jpg);
     width: 50%;
     height: 280px;
     background-size: cover;
 }
+
 .sign {
     width: 70%;
     height: 40px;
@@ -116,12 +172,15 @@ body {
     margin-top: 38px;
     font-family: sans-serif;
 }
+
 .sign:hover {
     background-color: rgba(128, 128, 128, 0.211);
 }
+
 .sign2:hover {
     background-color: rgba(128, 128, 128, 0.251);
 }
+
 .sign2 {
     width: 70%;
     height: 40px;
@@ -132,18 +191,21 @@ body {
     margin-top: 25px;
     font-family: sans-serif;
 }
+
 .para {
     width: 70%;
     font-family: sans-serif;
     font-size: small;
     color: rgba(128, 128, 128, 0.595);
 }
+
 .footer {
     bottom: 0;
     position: sticky;
     margin-bottom: 10px;
     width: 100%;
 }
+
 .usersListItem {
     width: 70%;
     margin: 0 auto;
@@ -154,6 +216,7 @@ body {
     padding-bottom: 30px;
     color: rgba(128, 128, 128, 0.748);
 }
+
 .receiver {
     width: 70%;
     margin: 0 auto;
@@ -164,15 +227,18 @@ body {
     padding-bottom: 30px;
     color: rgba(128, 128, 128, 0.748);
 }
+
 .usersList {
     list-style: none;
 }
+
 .line {
-  width: 80%;
-  margin: 0 auto;
-  height: 3px;
-  background-color: gray;
+    width: 80%;
+    margin: 0 auto;
+    height: 3px;
+    background-color: gray;
 }
+
 .sender {
     width: 70%;
     margin-bottom: 10px;
@@ -184,8 +250,9 @@ body {
     color: rgba(128, 128, 128, 0.748);
     float: right;
 }
+
 @media (max-width: 500px) {
-  body {
-    background-color: black;
-  }
+    body {
+        background-color: black;
+    }
 }

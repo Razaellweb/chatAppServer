@@ -6,6 +6,9 @@ const ChatPage = () => {
     const chatid1 = localStorage.getItem("spaceid1");
     const chatid2 = localStorage.getItem("spaceid2");
     const name = localStorage.getItem("nameSpace")
+    const [conirm, setConirm] = useState("block")
+    const [load, setLoad] = useState("loadr")
+    const [loa, setLoa] = useState("loadr")
     const receiversName = localStorage.getItem("receiversName")
     const [num, setNum] = useState(0)
 
@@ -39,17 +42,22 @@ const ChatPage = () => {
                     setAllMessages(data.messages)
                     setNum(Math.random())
                 }
+                else {
+                    setAllMessages(data.messages)
+                }
             }
         }
         else {
             setAllMessages([])
         }
-        
         setNum(Math.random())
     }
 
-    async function sendMessage(event){
+    async function sendMessage(event) {
         event.preventDefault();
+        setConirm("none")
+        setLoad("loaderx")
+        setLoa("loadex")
         const response = await fetch("https://connectrz.herokuapp.com/api/sendMessage", {
             method: "POST",
             headers: {
@@ -65,28 +73,42 @@ const ChatPage = () => {
         console.log(data)
         if (data.sent) {
             getMessage()
+            setConirm("block")
+            setLoad("loarx")
+            setLoa("loade")
+            setMessage("")
         }
         else {
             console.log("check for erors")
         }
     }
-    return(
+    return (
         <div className="container">
             <h4>{receiversName}</h4>
             {allMessages.map((item) => {
-                return(
+                return (
                     <div key={Math.random()}>
                         <fieldset className={item.class}>
                             <p>{item.sender}</p>
                             <div className="line"></div>
-                           <h5>{item.message}</h5>
+                            <h5>{item.message}</h5>
                         </fieldset><br />
                     </div>
                 )
             })}
             <form onSubmit={sendMessage}>
-            <input type="text" className="input" onChange={(e) => {setMessage(e.target.value)}}/>
-            <input type="submit" className="btn" value={"send"}/>
+                <input type="text" value={message} className="input" onChange={(e) => { setMessage(e.target.value) }} />
+
+                <button type="submit" className='btn'><span style={{ display: conirm }}>send</span>
+                    <center>
+                        <div className={load}>
+                            <div className={loa}>
+
+                            </div>
+
+                        </div>
+                    </center>
+                </button>
             </form>
         </div>
     )
