@@ -775,8 +775,7 @@
     "yocto-queue": "^0.1.0"
   },
   "scripts": {
-    "start": "node index.js",
-    "heroku-postbuild": "cd client && npm install --legacy-peer-deps && npm run build --force"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC"
