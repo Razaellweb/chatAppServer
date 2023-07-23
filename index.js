@@ -10,7 +10,9 @@ const path = require('path')
 app.use(cors())
 app.use(express.json())
 
-mongoose.connect("mongodb+srv://azeez:Raza2003@cluster0.1rnci.mongodb.net/chatspace?retryWrites=true&w=majority");
+mongoose.connect( process.env.URI);
+
+//mongoose.connect("mongodb://127.0.0.1:27017/chatSpace");
 
 app.post("/api/register", async (req, res) => {
   console.log(req.body)
@@ -91,12 +93,11 @@ app.post("/api/getUsers", async (req, res) => {
   }
 })
 
+// app.use(express.static(path.join(__dirname, '/client/build')));
 
-app.use(express.static(path.join(__dirname, '/client/build')));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+// });
 
 
 app.listen(process.env.PORT || '1387', () => {

@@ -70,7 +70,6 @@ const ChatPage = () => {
             })
         })
         const data = await response.json();
-        console.log(data)
         if (data.sent) {
             getMessage()
             setConirm("block")
